@@ -1,0 +1,44 @@
+server:
+  port: 6931
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/azsd
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+    spring:
+      rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+        listener:
+          simple:
+            acknowledge-mode: auto
+
+    logging:
+      level:
+        org.springframework.amqp.rabbit: DEBUG
+        com.example.taskmanagement: DEBUG
+
+
+
+jwt:
+  secret: YourJWTSecretKey
+  expiration: 86400
+
+mail:
+  host: smtp.example.com
+  port: 587
+  username: rahmanbaxisli6@gmail.com
+  password: Rahman1234!5
+
+rabbitmq:
+  max-attempts: 3
